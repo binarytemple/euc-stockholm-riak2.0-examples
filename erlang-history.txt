@@ -1,0 +1,1009 @@
+
+
+
+basho-catah% cat erl_crash.dump | less
+basho-catah% cat LOG_build
+Eshell V5.10.4  (abort with ^G)
+1> Written: /Users/bryan/.sherlock/mails/questions.html
+1> Written: /Users/bryan/.sherlock/mails/questions.term
+1> 190 files must be fetched
+1> Years = []
+1> Parsing mails for: 2009
+1> Written: /Users/bryan/.sherlock/mails/2009/parsed.bin
+1> {"init terminating in do_boot",{badarith,[{sherlock_mails,parse_mails,1,[{file,"src/sherlock_mails.erl"},{line,183}]},{sherlock_mails,test_build,0,[{file,"src/sherlock_mails.erl"},{line,23}]},{init,start_it,1,[]},{init,start_em,1,[]}]}}
+basho-catah%
+basho-catah%
+basho-catah%
+basho-catah% v src/sherlock_mails.erl
+
+zsh: suspended  vim src/sherlock_mails.erl
+basho-catah%
+basho-catah%
+basho-catah% l
+LICENCE         LOG_build       LOG_test        Makefile        README.md       ebin            erl_crash.dump  src
+basho-catah%
+basho-catah%
+basho-catah% erl
+Erlang R16B03 (erts-5.10.4) [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false]
+
+Eshell V5.10.4  (abort with ^G)
+1> webtool:start().
+WebTool is available at http://localhost:8888/
+Or  http://127.0.0.1:8888/
+{ok,<0.36.0>}
+2>
+   zsh: suspended  erl
+                      %                                                                                                                                                       basho-catah% p
+/common/euc-stockholm-riak2.0-email
+basho-catah% l
+LICENCE         LOG_build       LOG_test        Makefile        README.md       ebin            erl_crash.dump  src
+basho-catah% fg
+[3]    continued  erl
+
+2> \
+2>
+2>
+2>
+2>
+2> p().
+* 2: syntax error before: '\\'
+2> pwd().
+/common/euc-stockholm-riak2.0-email
+ok
+3> ls().
+LICENCE            LOG_build          LOG_test           Makefile
+README.md          ebin               erl_crash.dump     src
+
+ok
+4> code:
+add_path/1             add_patha/1            add_paths/1
+add_pathsa/1           add_pathsz/1           add_pathz/1
+all_loaded/0           clash/0                compiler_dir/0
+del_path/1             delete/1               ensure_loaded/1
+get_chunk/2            get_mode/0             get_object_code/1
+get_path/0             is_loaded/1            is_module_native/1
+is_sticky/1            lib_dir/0              lib_dir/1
+lib_dir/2              load_abs/1             load_abs/2
+load_binary/3          load_file/1            load_native_partial/2
+load_native_sticky/3   make_stub_module/3     module_info/0
+module_info/1          module_md5/1           objfile_extension/0
+priv_dir/1             purge/1                rehash/0
+replace_path/2         root_dir/0             set_path/1
+set_primary_archive/4  soft_purge/1           start_link/0
+start_link/1           stick_dir/1            stick_mod/1
+stop/0                 unstick_dir/1          unstick_mod/1
+where_is_file/1        where_is_file/2        which/1
+
+4> code:add_pathz("ebin").
+true
+5> m(shell
+shell            shell_default
+5> m(sherlock_mails).
+Module sherlock_mails compiled: Date: June 5 2014, Time: 11.44
+Compiler options:  [{outdir,"ebin"},debug_info,{i,"include"}]
+Object file: /common/euc-stockholm-riak2.0-email/ebin/sherlock_mails.beam
+Exports:
+add_keywords/2                make_stuff_to_index/1
+add_synthetic_keywords/1      matches/2
+compile_awk_reg/1             merge/2
+compute_tfidf/1               module_info/0
+ensure_mail_root/0            module_info/1
+ensure_mail_year_directory/1  normalise_months/2
+fetch_all_mails/0             parse_compressed_mails/3
+fetch_mail_with_id/2          parse_mails/1
+filter/3                      pp/1
+find_best_match/3             print_mail/2
+find_files_for_year/1         process_year/1
+find_mail_years/0             remove_duplicates/1
+find_mails_similar_to_binary/2remove_duplicates/2
+find_mails_similar_to_binary/3remove_self/2
+find_mails_similar_to_file/2  search_mails_regexprs/4
+find_mails_similar_to_mail/3  sherlock_cache/0
+get_index/0                   sherlock_root/0
+get_keyword_vector/2          show_best/1
+get_month/1                   sort_months/1
+interlieve/2                  test_build/0
+loop1/2                       test_search/0
+ok
+6>
+6>
+6> she
+shell             shell_default     sherlock_mails
+6> sherlock_mails:fetch_
+fetch_all_mails/0     fetch_mail_with_id/2
+6> sherlock_mails:fetch_
+fetch_all_mails/0     fetch_mail_with_id/2
+6>
+6>
+6> m(sherlock_get_mails).
+Module sherlock_get_mails compiled: Date: June 5 2014, Time: 11.51
+Compiler options:  [{outdir,"ebin"},debug_info,{i,"include"}]
+Object file: /common/euc-stockholm-riak2.0-email/ebin/sherlock_get_mails.beam
+Exports:
+         fetch_files/2
+         get_index/1
+         module_info/0
+         module_info/1
+         parse_index/2
+ok
+7> m(sherlock_get_mails).
+Module sherlock_get_mails compiled: Date: June 5 2014, Time: 11.51
+Compiler options:  [{outdir,"ebin"},debug_info,{i,"include"}]
+Object file: /common/euc-stockholm-riak2.0-email/ebin/sherlock_get_mails.beam
+Exports:
+         fetch_files/2
+         get_index/1
+         module_info/0
+         module_info/1
+         parse_index/2
+ok
+8> l(sherlock_get_mails).
+{module,sherlock_get_mails}
+9> m(sherlock_get_mails).
+Module sherlock_get_mails compiled: Date: June 5 2014, Time: 11.53
+Compiler options:  [{outdir,"ebin"},debug_info,{i,"include"}]
+Object file: /common/euc-stockholm-riak2.0-email/ebin/sherlock_get_mails.beam
+Exports:
+         fetch_and_store/2
+         fetch_data/2
+         fetch_files/2
+         findall/2
+         findall/4
+         get_index/1
+         module_info/0
+         module_info/1
+         parse_index/2
+         start_inets/0
+ok
+10> sherlock_get_mails:fetch_and_store("2014-June.txt.gz", "/tmp/foo.gz").
+fetching:"http://erlang.org/pipermail/erlang-questions/2014-June.txt.gz"
+** exception exit: {noproc,{gen_server,call,
+                                       [httpc_manager,
+                                        {request,{request,undefined,<0.32.0>,0,http,
+                                                          {"erlang.org",80},
+                                                          "/pipermail/erlang-questions/2014-June.txt.gz",[],get,
+                                                          {http_request_h,undefined,"keep-alive",undefined,undefined,
+                                                                          undefined,undefined,undefined,undefined,undefined,...},
+                                                          {[],[]},
+                                                          {http_options,"HTTP/1.1",infinity,true,
+                                                                        {essl,[]},
+                                                                        undefined,false,infinity,...},
+                                                          "http://erlang.org/pipermail/erlang-questions/2014-June.txt.gz",
+                                                          [],none,[],1401969325786,undefined,undefined,false}},
+                                        infinity]}}
+     in function  gen_server:call/3 (gen_server.erl, line 188)
+     in call from httpc:handle_request/9 (httpc.erl, line 572)
+     in call from sherlock_get_mails:fetch_and_store/2 (src/sherlock_get_mails.erl, line 82)
+11> inets
+inets           inets_regexp    inets_trace
+11> inets:st
+start/0  start/1  start/2  start/3  stop/0   stop/2
+11> inets:start().
+ok
+12> sherlock_get_mails:fetch_and_store("2014-June.txt.gz", "/tmp/foo.gz").
+fetching:"http://erlang.org/pipermail/erlang-questions/2014-June.txt.gz"
+** exception error: no match of right hand side value {ok,{{"HTTP/1.1",200,"OK"},
+                                                           [{"connection","Keep-Alive"},
+                                                            {"date","Thu, 05 Jun 2014 11:55:40 GMT"},
+                                                            {"accept-ranges","bytes"},
+                                                            {"etag","\"3cf675-8e65-538fc766\""},
+                                                            {"server","Apache/1.3.42 (Unix)"},
+                                                            {"content-encoding","x-gzip"},
+                                                            {"content-length","36453"},
+                                                            {"content-type","text/plain"},
+                                                            {"last-modified","Thu, 05 Jun 2014 01:27:02 GMT"},
+                                                            {"keep-alive","timeout=15, max=100"}],
+                                                           [31,139,8,8,102,199,143,83,2,255,50,48,49,52,45,74,117,110,
+                                                            101,46,116,120,116,0|...]}}
+     in function  sherlock_get_mails:fetch_and_store/2 (src/sherlock_get_mails.erl, line 82)
+13>
+13> c(sherlock_get_mails).
+sherlock_get_mails.erl: no such file or directory
+error
+14>
+14> inets:start().
+{error,{already_started,inets}}
+15> l(sherlock_get_mails).
+{module,sherlock_get_mails}
+16> sherlock_get_mails:fetch_and_store("2014-June.txt.gz", "/tmp/foo.gz").
+fetching:"http://erlang.org/pipermail/erlang-questions/2014-June.txt.gz"
+** exception error: no match of right hand side value {ok,{{"HTTP/1.1",200,"OK"},
+                                                           [{"connection","Keep-Alive"},
+                                                            {"date","Thu, 05 Jun 2014 11:58:27 GMT"},
+                                                            {"accept-ranges","bytes"},
+                                                            {"etag","\"3cf675-8e65-538fc766\""},
+                                                            {"server","Apache/1.3.42 (Unix)"},
+                                                            {"content-encoding","x-gzip"},
+                                                            {"content-length","36453"},
+                                                            {"content-type","text/plain"},
+                                                            {"last-modified","Thu, 05 Jun 2014 01:27:02 GMT"},
+                                                            {"keep-alive","timeout=15, max=100"}],
+                                                           [31,139,8,8,102,199,143,83,2,255,50,48,49,52,45,74,117,110,
+                                                            101,46,116,120,116,0|...]}}
+     in function  sherlock_get_mails:fetch_and_store/2 (src/sherlock_get_mails.erl, line 82)
+17>
+17> l(sherlock_get_mails).
+{module,sherlock_get_mails}
+18> sherlock_get_mails:fetch_and_store("2014-June.txt.gz", "/tmp/foo.gz").
+fetching:"http://erlang.org/pipermail/erlang-questions/2014-June.txt.gz"
+written:/tmp/foo.gz
+ok
+19>
+19> file:
+advise/4                  allocate/3                altname/1
+change_group/2            change_mode/2             change_owner/2
+change_owner/3            change_time/2             change_time/3
+close/1                   consult/1                 copy/2
+copy/3                    copy_opened/3             datasync/1
+del_dir/1                 delete/1                  eval/1
+eval/2                    file_info/1               format_error/1
+get_cwd/0                 get_cwd/1                 ipread_s32bu_p32bu/3
+ipread_s32bu_p32bu_int/3  list_dir/1                list_dir_all/1
+make_dir/1                make_link/2               make_symlink/2
+module_info/0             module_info/1             native_name_encoding/0
+open/2                    path_consult/2            path_eval/2
+path_eval/3               path_open/3               path_script/2
+path_script/3             pid2name/1                position/2
+pread/2                   pread/3                   pwrite/2
+pwrite/3                  raw_read_file_info/1      raw_write_file_info/2
+read/2                    read_file/1               read_file_info/1
+read_file_info/2          read_line/1               read_link/1
+read_link_all/1           read_link_info/1          read_link_info/2
+rename/2                  script/1                  script/2
+sendfile/2                sendfile/5                set_cwd/1
+sync/1                    truncate/1                write/2
+write_file/2              write_file/3              write_file_info/2
+write_file_info/3
+19> file:re
+read/2            read_file/1       read_file_info/1  read_file_info/2
+read_line/1       read_link/1       read_link_all/1   read_link_info/1
+read_link_info/2  rename/2
+19> file:read
+read/2            read_file/1       read_file_info/1  read_file_info/2
+read_line/1       read_link/1       read_link_all/1   read_link_info/1
+read_link_info/2
+19> file:read_file
+read_file/1       read_file_info/1  read_file_info/2
+19> file:read_file("/Users/bryan/.sherlock/mails/2009/parsed.bin").
+{ok,<<131,106>>}
+20> {ok, Bin} = v(-1).
+{ok,<<131,106>>}
+21> Bin.
+<<131,106>>
+22> erl
+erl_distribution    erl_eval            erl_internal
+erl_lint            erl_parse           erl_posix_msg
+erl_prim_loader     erl_scan            erlang
+
+22> erlang:binary_to_term(Bin).
+[]
+23> fg
+23>
+23>
+23>
+23>
+23>
+23> l(sherlock_get_mails).
+* 7: syntax error before: l
+23> sherlock_
+sherlock_get_mails    sherlock_mails
+23> l(sherlock).
+{module,sherlock}
+24> sherlock:
+cosine_similarity/3           fetch_index/0
+fetch_mails/0                 find_mails_similar_to_file/2
+find_mails_similar_to_mail/3  get_keyword_vector/2
+init/0                        mail_years/0
+module_info/0                 module_info/1
+print_mail/2                  process_all_years/0
+process_year/1                search_mails_regexprs/4
+tdiff/2
+24> sherlock:fetch_
+fetch_index/0  fetch_mails/0
+24> sherlock:fetch_
+fetch_index/0  fetch_mails/0
+24> sherlock:fetch_mails().
+fetching:"http://erlang.org/pipermail/erlang-questions/1997-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1997-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1997-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1997-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1998-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1998-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1999-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1999-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1999-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1999-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1999-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1999-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1999-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1999-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1999-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1999-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1999-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1999-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1999-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1999-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1999-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1999-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1999-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1999-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1999-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1999-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1999-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1999-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/1999-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/1999-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2000-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2000-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2000-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2000-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2000-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2000-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2000-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2000-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2000-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2000-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2000-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2000-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2000-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2000-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2000-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2000-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2000-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2000-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2000-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2000-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2000-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2000-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2000-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2000-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2001-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2001-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2001-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2001-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2001-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2001-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2001-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2001-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2001-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2001-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2001-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2001-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2001-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2001-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2001-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2001-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2001-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2001-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2001-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2001-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2001-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2001-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2001-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2001-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2002-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2002-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2002-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2002-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2002-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2002-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2002-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2002-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2002-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2002-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2002-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2002-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2002-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2002-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2002-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2002-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2002-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2002-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2002-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2002-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2002-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2002-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2002-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2002-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2003-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2003-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2003-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2003-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2003-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2003-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2003-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2003-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2003-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2003-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2003-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2003-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2003-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2003-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2003-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2003-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2003-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2003-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2003-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2003-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2003-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2003-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2003-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2003-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2004-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2004-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2004-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2004-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2004-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2004-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2004-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2004-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2004-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2004-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2004-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2004-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2004-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2004-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2004-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2004-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2004-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2004-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2004-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2004-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2004-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2004-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2004-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2004-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2005-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2005-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2005-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2005-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2005-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2005-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2005-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2005-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2005-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2005-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2005-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2005-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2005-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2005-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2005-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2005-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2005-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2005-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2005-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2005-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2005-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2005-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2005-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2005-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2006-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2006-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2006-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2006-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2006-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2006-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2006-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2006-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2006-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2006-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2006-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2006-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2006-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2006-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2006-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2006-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2006-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2006-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2006-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2006-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2006-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2006-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2006-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2006-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2007-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2007-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2007-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2007-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2007-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2007-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2007-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2007-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2007-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2007-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2007-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2007-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2007-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2007-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2007-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2007-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2007-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2007-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2007-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2007-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2007-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2007-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2007-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2007-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2008-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2008-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2008-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2008-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2008-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2008-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2008-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2008-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2008-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2008-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2008-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2008-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2008-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2008-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2008-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2008-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2008-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2008-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2008-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2008-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2008-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2008-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2008-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2008-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2009-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2009-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2009-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2009-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2009-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2009-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2009-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2009-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2009-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2009-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2009-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2009-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2009-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2009-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2009-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2009-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2009-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2009-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2009-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2009-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2009-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2009-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2009-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2009-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2010-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2010-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2010-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2010-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2010-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2010-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2010-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2010-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2010-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2010-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2010-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2010-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2010-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2010-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2010-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2010-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2010-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2010-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2010-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2010-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2010-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2010-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2010-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2010-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2011-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2011-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2011-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2011-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2011-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2011-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2011-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2011-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2011-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2011-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2011-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2011-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2011-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2011-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2011-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2011-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2011-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2011-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2011-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2011-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2011-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2011-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2011-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2011-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2012-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2012-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2012-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2012-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2012-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2012-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2012-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2012-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2012-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2012-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2012-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2012-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2012-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2012-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2012-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2012-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2012-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2012-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2012-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2012-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2012-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2012-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2012-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2012-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2013-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2013-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2013-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2013-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2013-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2013-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2013-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2013-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2013-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2013-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2013-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2013-June.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2013-July.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2013-July.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2013-August.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2013-August.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2013-September.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2013-September.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2013-October.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2013-October.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2013-November.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2013-November.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2013-December.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2013-December.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2014-January.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2014-January.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2014-February.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2014-February.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2014-March.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2014-March.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2014-April.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2014-April.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2014-May.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2014-May.txt.gz
+fetching:"http://erlang.org/pipermail/erlang-questions/2014-June.txt.gz"
+written:/Users/bryan/.sherlock/mails/cache/2014-June.txt.gz
+[ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,
+ ok,ok,ok,ok,ok,ok,ok,ok,ok,ok|...]
+25> sherlock:
+cosine_similarity/3           fetch_index/0
+fetch_mails/0                 find_mails_similar_to_file/2
+find_mails_similar_to_mail/3  get_keyword_vector/2
+init/0                        mail_years/0
+module_info/0                 module_info/1
+print_mail/2                  process_all_years/0
+process_year/1                search_mails_regexprs/4
+tdiff/2
+25> sherlock:fetch_index().
+Written: /Users/bryan/.sherlock/mails/questions.html
+Written: /Users/bryan/.sherlock/mails/questions.term
+190 files must be fetched
+ok
+26> sherlock:
+cosine_similarity/3           fetch_index/0
+fetch_mails/0                 find_mails_similar_to_file/2
+find_mails_similar_to_mail/3  get_keyword_vector/2
+init/0                        mail_years/0
+module_info/0                 module_info/1
+print_mail/2                  process_all_years/0
+process_year/1                search_mails_regexprs/4
+tdiff/2
+26> sherlock:m
+mail_years/0   module_info/0  module_info/1
+26> sherlock:mail_years().
+["1997","1998","1999","2000","2001","2002","2003","2004",
+ "2005","2006","2007","2008","2009","2010","2011","2012",
+ "2013","2014"]
+27>
+27>
+27>
+27>
+27>
+27>
+27>
+27>
+27> hipe_unified_loader:
+chunk_name/1        load/2              load_module/3
+load_native_code/2  module_info/0       module_info/1
+post_beam_load/1
+27> er
+erl_distribution      erl_eval              erl_internal
+erl_lint              erl_parse             erl_posix_msg
+erl_prim_loader       erl_scan              erlang
+error_handler         error_logger          error_logger_tty_h
+erts_internal
+27> erl_internal:
+arith_op/2       bif/2            bif/3            bool_op/2
+comp_op/2        guard_bif/2      list_op/2        module_info/0
+module_info/1    new_type_test/2  old_bif/2        old_type_test/2
+op_type/2        send_op/2        type_test/2
+27> help().
+** shell internal commands **
+b()        -- display all variable bindings
+e(N)       -- repeat the expression in query <N>
+f()        -- forget all variable bindings
+f(X)       -- forget the binding of variable X
+h()        -- history
+history(N) -- set how many previous commands to keep
+results(N) -- set how many previous command results to keep
+catch_exception(B) -- how exceptions are handled
+v(N)       -- use the value of query <N>
+rd(R,D)    -- define a record
+rf()       -- remove all record information
+rf(R)      -- remove record information about R
+rl()       -- display all record information
+rl(R)      -- display record information about R
+rp(Term)   -- display Term using the shell's record information
+rr(File)   -- read record information from File (wildcards allowed)
+rr(F,R)    -- read selected record information from file(s)
+rr(F,R,O)  -- read selected record information with options
+** commands in module c **
+bt(Pid)    -- stack backtrace for a process
+c(File)    -- compile and load code in <File>
+cd(Dir)    -- change working directory
+flush()    -- flush any messages sent to the shell
+help()     -- help info
+i()        -- information about the system
+ni()       -- information about the networked system
+i(X,Y,Z)   -- information about pid <X,Y,Z>
+l(Module)  -- load or reload module
+lc([File]) -- compile a list of Erlang modules
+ls()       -- list files in the current directory
+ls(Dir)    -- list files in directory <Dir>
+m()        -- which modules are loaded
+m(Mod)     -- information about module <Mod>
+memory()   -- memory allocation information
+memory(T)  -- memory allocation information of type <T>
+nc(File)   -- compile and load code in <File> on all nodes
+nl(Module) -- load module on all nodes
+pid(X,Y,Z) -- convert X,Y,Z to a Pid
+pwd()      -- print working directory
+q()        -- quit - shorthand for init:stop()
+regs()     -- information about registered processes
+nregs()    -- information about all registered processes
+xm(M)      -- cross reference check a module
+y(File)    -- generate a Yecc parser
+** commands in module i (interpreter interface) **
+ih()       -- print help for the i module
+true
+28>
+28>
+28>
+28>
+28>
+28>
+28> b().
+Bin = <<131,106>>
+ok
+29> ih().
+iv()         -- print the current version of the interpreter
+im()         -- pop up a monitor window
+ii(Mod)      -- interpret Mod(s) (or AbsMod(s))
+ii(Mod,Op)   -- interpret Mod(s) (or AbsMod(s))
+                use Op as options (same as for compile)
+iq(Mod)      -- do not interpret Mod(s)
+ini(Mod)     -- ii/1 at all Erlang nodes
+ini(Mod,Op)  -- ii/2 at all Erlang nodes
+inq(Mod)     -- iq at all Erlang nodes
+ib(Mod,Line) -- set a break point at Line in Mod
+ib(M,F,Arity)-- set a break point in M:F/Arity
+ibd(Mod,Line)-- disable the break point at Line in Mod
+ibe(Mod,Line)-- enable the break point at Line in Mod
+iba(M,L,Action)-- set a new action at break
+ibc(M,L,Action)-- set a new condition for break
+ir(Mod,Line) -- remove the break point at Line in Mod
+ir(M,F,Arity)-- remove the break point in M:F/Arity
+ir(Mod)      -- remove all break points in Mod
+ir()         -- remove all existing break points
+il()         -- list all interpreted modules
+ip()         -- print status of all interpreted processes
+ic()         -- remove all terminated interpreted processes
+ipb()        -- list all break points
+ipb(Mod)     -- list all break points in Mod
+ia(Pid)      -- attach to Pid
+ia(X,Y,Z)    -- attach to pid(X,Y,Z)
+ia(Pid,Fun)  -- use own Fun = {M,F} as attach application
+ia(X,Y,Z,Fun)-- use own Fun = {M,F} as attach application
+iaa([Flag])  -- set automatic attach to process
+                Flag is init,break and exit
+iaa([Fl],Fun)-- use own Fun = {M,F} as attach application
+ist(Flag)    -- set stack trace flag
+                Flag is all (true),no_tail or false
+ok
+30> h().
+10: sherlock_get_mails:fetch_and_store("2014-June.txt.gz",
+                                       "/tmp/foo.gz")
+-> {'EXIT',{{noproc,{gen_server,call,
+                                [httpc_manager,
+                                 {request,{request,undefined,<0.32.0>,0,http,
+                                                   {"erlang.org",80},
+                                                   "/pipermail/erlang-questions/2014-June.txt.gz",[],get,
+                                                   {http_request_h,undefined,"keep-alive",undefined,undefined,
+                                                                   undefined,undefined,...},
+                                                   {[],[]},
+                                                   {http_options,"HTTP/1.1",infinity,true,{...},...},
+                                                   "http://erlang.org/pipermail/erlang-questions/2014-June.txt.gz",
+                                                   [],none,[],1401969325786,...}},
+                                 infinity]}},
+            [{gen_server,call,3,[{file,"gen_server.erl"},{line,188}]},
+             {httpc,handle_request,9,[{file,"httpc.erl"},{line,572}]},
+             {sherlock_get_mails,fetch_and_store,2,
+                                 [{file,"src/sherlock_get_mails.erl"},{line,82}]},
+             {erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,573}]},
+             {shell,exprs,7,[{file,"shell.erl"},{line,674}]},
+             {shell,eval_exprs,7,[{file,"shell.erl"},{line,629}]},
+             {shell,eval_loop,3,[{file,"shell.erl"},{line,614}]}]}}
+11: inets:start()
+-> ok
+12: sherlock_get_mails:fetch_and_store("2014-June.txt.gz",
+                                       "/tmp/foo.gz")
+-> {'EXIT',{{badmatch,{ok,{{"HTTP/1.1",200,"OK"},
+                           [{"connection","Keep-Alive"},
+                            {"date","Thu, 05 Jun 2014 11:55:40 GMT"},
+                            {"accept-ranges","bytes"},
+                            {"etag","\"3cf675-8e65-538fc766\""},
+                            {"server","Apache/1.3.42 (Unix)"},
+                            {"content-encoding","x-gzip"},
+                            {"content-length","36453"},
+                            {"content-type","text/plain"},
+                            {"last-modified","Thu, 05 Jun 2014 01:27:02 GMT"},
+                            {"keep-alive","timeout=15, max=100"}],
+                           [31,139,8,8,102,199,143,83,2,255,50,48,49,52,45,74,117,110,
+                            101|...]}}},
+            [{sherlock_get_mails,fetch_and_store,2,
+                                 [{file,"src/sherlock_get_mails.erl"},{line,82}]},
+             {erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,573}]},
+             {shell,exprs,7,[{file,"shell.erl"},{line,674}]},
+             {shell,eval_exprs,7,[{file,"shell.erl"},{line,629}]},
+             {shell,eval_loop,3,[{file,"shell.erl"},{line,614}]}]}}
+13: c(sherlock_get_mails)
+-> error
+14: inets:start()
+-> {error,{already_started,inets}}
+15: l(sherlock_get_mails)
+-> {module,sherlock_get_mails}
+16: sherlock_get_mails:fetch_and_store("2014-June.txt.gz",
+                                       "/tmp/foo.gz")
+-> {'EXIT',{{badmatch,{ok,{{"HTTP/1.1",200,"OK"},
+                           [{"connection","Keep-Alive"},
+                            {"date","Thu, 05 Jun 2014 11:58:27 GMT"},
+                            {"accept-ranges","bytes"},
+                            {"etag","\"3cf675-8e65-538fc766\""},
+                            {"server","Apache/1.3.42 (Unix)"},
+                            {"content-encoding","x-gzip"},
+                            {"content-length","36453"},
+                            {"content-type","text/plain"},
+                            {"last-modified","Thu, 05 Jun 2014 01:27:02 GMT"},
+                            {"keep-alive","timeout=15, max=100"}],
+                           [31,139,8,8,102,199,143,83,2,255,50,48,49,52,45,74,117,110,
+                            101|...]}}},
+            [{sherlock_get_mails,fetch_and_store,2,
+                                 [{file,"src/sherlock_get_mails.erl"},{line,82}]},
+             {erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,573}]},
+             {shell,exprs,7,[{file,"shell.erl"},{line,674}]},
+             {shell,eval_exprs,7,[{file,"shell.erl"},{line,629}]},
+             {shell,eval_loop,3,[{file,"shell.erl"},{line,614}]}]}}
+17: l(sherlock_get_mails)
+-> {module,sherlock_get_mails}
+18: sherlock_get_mails:fetch_and_store("2014-June.txt.gz",
+                                       "/tmp/foo.gz")
+-> ok
+19: file:read_file("/Users/bryan/.sherlock/mails/2009/parsed.bin")
+-> {ok,<<131,106>>}
+20: {ok,Bin} = v(19)
+-> {ok,<<131,106>>}
+21: Bin
+-> <<131,106>>
+22: binary_to_term(Bin)
+-> []
+23: l(sherlock)
+-> {module,sherlock}
+24: sherlock:fetch_mails()
+-> [ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,
+    ok,ok,ok,ok,ok,ok,ok,ok,ok,ok|...]
+25: sherlock:fetch_index()
+-> ok
+26: sherlock:mail_years()
+-> ["1997","1998","1999","2000","2001","2002","2003","2004",
+    "2005","2006","2007","2008","2009","2010","2011","2012",
+    "2013","2014"]
+27: help()
+-> true
+28: b()
+-> ok
+29: ih()
+-> ok
+ok
+31> h().
+11: inets:start()
+-> ok
+12: sherlock_get_mails:fetch_and_store("2014-June.txt.gz",
+                                       "/tmp/foo.gz")
+-> {'EXIT',{{badmatch,{ok,{{"HTTP/1.1",200,"OK"},
+                           [{"connection","Keep-Alive"},
+                            {"date","Thu, 05 Jun 2014 11:55:40 GMT"},
+                            {"accept-ranges","bytes"},
+                            {"etag","\"3cf675-8e65-538fc766\""},
+                            {"server","Apache/1.3.42 (Unix)"},
+                            {"content-encoding","x-gzip"},
+                            {"content-length","36453"},
+                            {"content-type","text/plain"},
+                            {"last-modified","Thu, 05 Jun 2014 01:27:02 GMT"},
+                            {"keep-alive","timeout=15, max=100"}],
+                           [31,139,8,8,102,199,143,83,2,255,50,48,49,52,45,74,117,110,
+                            101|...]}}},
+            [{sherlock_get_mails,fetch_and_store,2,
+                                 [{file,"src/sherlock_get_mails.erl"},{line,82}]},
+             {erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,573}]},
+             {shell,exprs,7,[{file,"shell.erl"},{line,674}]},
+             {shell,eval_exprs,7,[{file,"shell.erl"},{line,629}]},
+             {shell,eval_loop,3,[{file,"shell.erl"},{line,614}]}]}}
+13: c(sherlock_get_mails)
+-> error
+14: inets:start()
+-> {error,{already_started,inets}}
+15: l(sherlock_get_mails)
+-> {module,sherlock_get_mails}
+16: sherlock_get_mails:fetch_and_store("2014-June.txt.gz",
+                                       "/tmp/foo.gz")
+-> {'EXIT',{{badmatch,{ok,{{"HTTP/1.1",200,"OK"},
+                           [{"connection","Keep-Alive"},
+                            {"date","Thu, 05 Jun 2014 11:58:27 GMT"},
+                            {"accept-ranges","bytes"},
+                            {"etag","\"3cf675-8e65-538fc766\""},
+                            {"server","Apache/1.3.42 (Unix)"},
+                            {"content-encoding","x-gzip"},
+                            {"content-length","36453"},
+                            {"content-type","text/plain"},
+                            {"last-modified","Thu, 05 Jun 2014 01:27:02 GMT"},
+                            {"keep-alive","timeout=15, max=100"}],
+                           [31,139,8,8,102,199,143,83,2,255,50,48,49,52,45,74,117,110,
+                            101|...]}}},
+            [{sherlock_get_mails,fetch_and_store,2,
+                                 [{file,"src/sherlock_get_mails.erl"},{line,82}]},
+             {erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,573}]},
+             {shell,exprs,7,[{file,"shell.erl"},{line,674}]},
+             {shell,eval_exprs,7,[{file,"shell.erl"},{line,629}]},
+             {shell,eval_loop,3,[{file,"shell.erl"},{line,614}]}]}}
+17: l(sherlock_get_mails)
+-> {module,sherlock_get_mails}
+18: sherlock_get_mails:fetch_and_store("2014-June.txt.gz",
+                                       "/tmp/foo.gz")
+-> ok
+19: file:read_file("/Users/bryan/.sherlock/mails/2009/parsed.bin")
+-> {ok,<<131,106>>}
+20: {ok,Bin} = v(19)
+-> {ok,<<131,106>>}
+21: Bin
+-> <<131,106>>
+22: binary_to_term(Bin)
+-> []
+23: l(sherlock)
+-> {module,sherlock}
+24: sherlock:fetch_mails()
+-> [ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,
+    ok,ok,ok,ok,ok,ok,ok,ok,ok,ok|...]
+25: sherlock:fetch_index()
+-> ok
+26: sherlock:mail_years()
+-> ["1997","1998","1999","2000","2001","2002","2003","2004",
+    "2005","2006","2007","2008","2009","2010","2011","2012",
+    "2013","2014"]

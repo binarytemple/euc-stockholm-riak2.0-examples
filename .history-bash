@@ -1,0 +1,16 @@
+ 8824  v /Library/Ruby/Gems/2.0.0/gems/hcutil-0.0.5/
+ 8825  v /tmp/nonode@nohost_modules.txt
+ 8826  mdfind load 
+ 8827  mdfind load  | grep erl 
+ 8828  mdfind load  | grep erl | egrep -iv "(perl)"
+ 8829  cd /tmp
+ 8830  wget http://erlang.org/pipermail/erlang-questions/2009-December.txt.gz
+ 8831  curl -vvvv http://erlang.org/pipermail/erlang-questions/2009-December.txt.gz
+ 8832  reset
+ 8833  curl -vvvv http://erlang.org/pipermail/erlang-questions/2009-December.txt.gz > 2009-December.txt.gz
+ 8834  v 2009-December.txt.gz
+ 8835  find ~/.sherlock
+ 8836  v ~/.sherlock
+ 8837  p
+ 8838  history
+ 8839  p
